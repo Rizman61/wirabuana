@@ -1,0 +1,233 @@
+:root {
+    --color-1: black;
+    --text-color: white;
+    --hover-color: rgba(0, 38, 255, 0.817);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    background-color: var(--hover-color);
+}
+
+nav .home-link {
+    margin-right: auto;
+}
+
+nav svg{
+    fill: white;
+}
+
+#sidebar-active{
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+    display: none;
+}
+
+@media(max-width: 450px){
+    .links-container{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: ease-out 0.5s;
+    }
+    nav a{
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+        display: block;
+    }
+    #sidebar-active:checked ~ .links-container{
+      right: 0;
+    }
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    position: flex;
+}
+
+/* bagian header dengan logo dan nama sekolah wirabuana */
+.logo-nama {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    z-index: 2;
+    position: sticky;
+}
+
+.logo {
+    width: 65px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.nama-sekolah h1 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Garamond, serif;
+    color: rgb(75, 14, 215);
+    margin: 0;
+}
+
+.nama-sekolah h2 {
+    font-size: 24px;
+    font-family: Garamond, serif;
+    color: rgb(252, 22, 75);
+    margin: 0;
+}
+
+
+.hamparan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+.background-rio {
+    width: 100%;
+    max-width: 1300px;
+    height: 110vh;
+    background-image: url('riongoding.jpg');
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.background-rio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.teks-hamparan {
+    position: absolute;
+    top: 230px;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    color: white;
+}
+
+.wirabuana {
+    font-size: 45px;
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+    margin-left: 4%;
+    text-align: left;
+    z-index: 2;
+}
+
+.tentang {
+    font-size: 30px;
+    text-shadow: 8px 5px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    margin-left: 52%;
+    margin-right: 10px;
+    width: 40%;
+    word-wrap: break-word;
+    text-align: left;
+    z-index: 2;
+}
+
+.siswa-terbaik {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.siswa-terbaik h1 {
+    text-align: center;
+    margin-top: -10px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: rgb(75, 14, 215);
+}
+
+.konten {
+    margin-left: 10px;
+display: flex ;
+position: relative;
+}
+
+.siswa-terbaik img {
+    float: left;
+    max-width: 200px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+#quotes, #quoteses {
+    font-size: 30px;
+    margin-top: 90px;
+    margin-left: 50px;
+   padding: 0;
+}
+
+#murid, #murid2 {
+    font-size: 30px;
+    margin-top: 200px;
+    margin-left: -30vw;
+ 
+}
